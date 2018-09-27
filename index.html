@@ -64,7 +64,8 @@
                                     <header class="entry-header col-lg-12"><br><br><br><br>
                                         <br><br>
                                         <h2 style="text-align: center; color: #6c757d;">Votre Wallet <br>Bitcoin</h2>
-                                        <h1 id="bitcoin" style="text-align: center; color: #6c757d;"></h1>
+                                        <h1 id="bitcoin_btc" style="text-align: center; color: #6c757d;"></h1>
+                                        <h3 id="bitcoin_eur" style="font-size: 13pt;text-align: center; color: #6c757d;"></h3>
                                     </header><!-- .entry-header -->
 
                                     <div class="entry-content mt-4">
@@ -603,11 +604,23 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
    
 <script>
     (function () {
-        var bitcoinValue = 3268
+        var bitcoinValue = 1.034534554;
+
+        var valueBitcoin = 5480;
+
+            document.getElementById('bitcoin_btc').innerHTML = bitcoinValue +" BTC" ;
+            document.getElementById('bitcoin_eur').innerHTML = valueBitcoin * bitcoinValue + " €";
+
         window.setInterval(function(){
-            console.log("test")
-            document.getElementById('bitcoin').innerHTML = bitcoinValue.toString() + " €"
-            bitcoinValue = bitcoinValue - 127
+
+            bitcoinValue = bitcoinValue - 0.034504;
+            document.getElementById('bitcoin_btc').innerHTML = bitcoinValue.toFixed(8)+" BTC" ;
+            document.getElementById('bitcoin_eur').innerHTML = (bitcoinValue * valueBitcoin).toFixed(6) + " €";
+
+
+
+
+
         }, 1000);
     })()
 </script>
